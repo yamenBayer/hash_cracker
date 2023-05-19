@@ -3,10 +3,10 @@
     <a href="https://python.org">
     <img src="https://img.shields.io/badge/Python-3.7-green.svg">
   </a>
-  <a href="https://github.com/PushpenderIndia/technowhorse/releases">
+  <a href="https://github.com/yamenBayer/hash_cracker">
     <img src="https://img.shields.io/badge/Release-1.0-blue.svg">
   </a>
-    <a href="https://github.com/PushpenderIndia/technowhorse">
+    <a href="https://github.com/yamenBayer/hash_cracker">
     <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
   </a>
 </p>
