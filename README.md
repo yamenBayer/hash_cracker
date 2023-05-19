@@ -25,12 +25,12 @@ THIS CRACKER WAS CREATED ONLY FOR WHITE HUCKERS TO HELP THEM TEST THE SYSTEMS AN
 THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
 
 ## Features
-- [*] Works on Windows/Linux/OSx etc which supports Python 3
-- [*] Advanced, Lightweight, Easy to use
-- [*] Based on Advanced-BruteForce Technique
-- [*] Shows total attempts made by Cracker
-- [*] Automatically Stops the Script When Correct Password is Found
-- [*] Includes two techniques, one with advanced brute force (generate advanced wordlist), and the other with given wordlist as txt
+- Works on Windows/Linux/OSx etc which supports Python 3
+- Advanced, Lightweight, Easy to use
+- Based on Advanced-BruteForce Technique
+- Shows total attempts made by Cracker
+- Automatically Stops the Script When Correct Password is Found
+- Includes two techniques, one with advanced brute force (generate advanced wordlist), and the other with given wordlist as txt
 
 ## Prerequisite
 - [x] Python 3.X  
