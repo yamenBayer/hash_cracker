@@ -15,6 +15,7 @@ lengths = []
 threads = []
 speed = 1
 cores_used = 1
+wordlist_file = ''
 #####################################################################################################
 #####################################################################################################
 #####################################################################################################
@@ -86,9 +87,16 @@ def process(len1, len2, hash):
 
     return None
 
+def load_wordlist(value):
+    global wordlist
+    global wordlist_file
+    wordlist_file = value
+
+    with open(wordlist_file, 'r') as file:
+        wordlist = [line.strip() for line in file]
+
 def crack_hash(hash_to_crack, max_length, cores_num):
     
-
     for length in range(1, max_length+1):
         generate_wordlist(length)
         print("Iteration "+ str(length) + " processing...")
@@ -99,7 +107,6 @@ def crack_hash(hash_to_crack, max_length, cores_num):
         global threads
         threads = []
         if length > 3:
-
             old_min = 0
             for n in range(0, cores_num):
                 t = ThreadWithResult(target=process, args = (old_min, lengths[n], hash_to_crack))
@@ -120,6 +127,32 @@ def crack_hash(hash_to_crack, max_length, cores_num):
                 return t.result()
 
     return None
+
+def crack_hash_with_wordlist(hash, cores_num):
+    global hash_to_crack
+    hash_to_crack = hash
+
+    words_len = len(wordlist)
+    get_lengths(words_len, cores_num)
+
+    global threads
+    threads = []
+    old_min = 0
+    for n in range(cores_num):
+        t = ThreadWithResult(target=process, args=(old_min, lengths[n],hash_to_crack))
+        old_min = lengths[n]
+        threads.append(t)
+        t.start()
+    
+
+    for t in threads:
+        t.join()
+
+    for t in threads:
+        if t.result() is not None:
+            return t.result()
+
+    return None
 #####################################################################################################
 #####################################################################################################
 #####################################################################################################
@@ -134,7 +167,9 @@ if __name__ == "__main__":
     parser.add_argument('-c', '--cores', type=int, default=1, help='Number of processor cores to use')
     parser.add_argument('-th', '--to-hash', type=str, help='Word to hash')
     parser.add_argument('-m', '--method', choices=['md5', 'sha1', 'sha224', 'sha256', 'sha384', 'sha512'], default='md5', help='Hashing algorithm method to use')
+    parser.add_argument('-w', '--wordlist', dest='wordlist', metavar='WORDLIST',help='Path to the wordlist file')
     args = parser.parse_args()
+
 
     if args.to_hash:
         word = args.to_hash
@@ -176,7 +211,12 @@ if __name__ == "__main__":
             print("Number of processor cores used by this code:", avb_cores)
         print("-----------------------------------------------\n")
         start_time = time.time()
-        cracked_password = crack_hash(hash, max_length, cores_num)
+
+        if args.wordlist:
+            load_wordlist(args.wordlist)
+            cracked_password = crack_hash_with_wordlist(hash, avb_cores)
+        else:
+            cracked_password = crack_hash(hash, 5, avb_cores)
 
         if cracked_password:
             print("\n")

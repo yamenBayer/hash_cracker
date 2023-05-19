@@ -30,6 +30,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [*] Based on Advanced-BruteForce Technique
 - [*] Shows total attempts made by Cracker
 - [*] Automatically Stops the Script When Correct Password is Found
+- [*] Includes two techniques, one with advanced brute force (generate advanced wordlist), and the other with given wordlist as txt
 
 ## Prerequisite
 - [x] Python 3.X  
