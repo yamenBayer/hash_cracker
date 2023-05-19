@@ -13,7 +13,7 @@
 
 
 <p align="center">
-  Advanced hash Cracker/Decoder/Decryptor written in Python 3
+  Advanced hash Cracker written in Python 3
 </p>
 
 
