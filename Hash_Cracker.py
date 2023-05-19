@@ -64,11 +64,10 @@ def process(len1, len2, hash):
     for i in range(len1, len2):
         total_words_checked += 1
         
-        global flag
+        global flag, speed
         if flag == False:
             elapsed_time = time.time() - start_time
             if elapsed_time >= duration_threshold :
-                global speed
                 speed = total_words_checked
                 flag = True
 
@@ -77,6 +76,8 @@ def process(len1, len2, hash):
         
         hashes.extend([hashlib.md5(word.encode()).hexdigest(), hashlib.sha1(word.encode()).hexdigest(), hashlib.sha224(word.encode()).hexdigest(), hashlib.sha256(word.encode()).hexdigest(), hashlib.sha384(word.encode()).hexdigest(), hashlib.sha512(word.encode()).hexdigest()])
         if hash in hashes:
+            if flag == False:
+                speed = total_words_checked - 1
             return word
         
         

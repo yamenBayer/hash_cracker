@@ -19,7 +19,7 @@
 
 ## Disclaimer
 
-THIS CRACKER WAS CREATED ONLY FOR WHITE HUCKERS
+THIS CRACKER WAS CREATED ONLY FOR WHITE HUCKERS TO HELP THEM TEST THE SYSTEMS AND ENCRYPTION/DECRYPTION ALGORITHMS, OR IT COULD INJECTED ON KEY TRANFERING SYSTEM.
 
 
 THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
@@ -53,7 +53,7 @@ $ python hash_cracker.py -ha <Hash> -c <no. of cores>
 $ Note: no. of cores must be equal or lower than the available cores in your system.
 
 # Cracking Example
-$ python hash_cracker.py -ha 22c2e450a8f0933878bf16a55e3960c69ff4c76684bb67fb553497eababd9e4f61577331480dd4af6b905f90df6e6db4d4b364ae262cb9b9ec303f8086249f85 -c 6
+$ python hash_cracker.py -ha c1a5298f939e87e8f962a5edfc206918 -c 6
 ```
 
 ### Note : Procedure for cracking is same in all OS, and the maximum time around half hour and maximum word length supported is 4
