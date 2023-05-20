@@ -50,8 +50,8 @@ $ cd hash_cracker
 $ python hash_cracker.py --help
 
 # Cracking MD5 Hash Without saving Result
-$ python hash_cracker.py -ha <Hash> -c <no. of cores>
-$ Note: no. of cores must be equal or lower than the available cores in your system.
+$ python hash_cracker.py -ha <Hash> -c <no. of cores> -w <Wordlist file>
+$ Note: no. of cores must be equal or lower than the available cores in your system, the wordlist file is not required.
 
 # Cracking Example
 $ python hash_cracker.py -ha c1a5298f939e87e8f962a5edfc206918 -c 6
