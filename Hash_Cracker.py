@@ -4,6 +4,7 @@ import os
 import threading
 import time
 import argparse
+import random
 
 #####################################################################################################
 ########################################## Global Variables #########################################
@@ -50,7 +51,6 @@ def get_lengths(length, cores):
 def generate_wordlist(length):
     global wordlist
     
-
     combinations = itertools.product(alphabet, repeat=length)
     for combination in combinations:
         word = ''.join(combination)
